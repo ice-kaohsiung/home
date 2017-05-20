@@ -1,4 +1,4 @@
-(function (window, document) {
+$(document).ready(function () {
 
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
@@ -27,12 +27,16 @@
     function toggleAll(e) {
         var active = 'active';
 
-        e.preventDefault();
+        // e.preventDefault();
         toggleClass(layout, active);
         toggleClass(menu, active);
         toggleClass(menuLink, active);
     }
 
+    $('.pure-menu-item').click(function (e){
+      // console.log(e)
+      toggleAll(e)
+    })
     menuLink.onclick = function (e) {
         toggleAll(e);
     };
@@ -43,4 +47,4 @@
         }
     };
 
-}(this, this.document));
+})
